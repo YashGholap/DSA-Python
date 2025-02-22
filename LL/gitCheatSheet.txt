@@ -1,0 +1,36 @@
+# Clone your forked repository
+git clone https://github.com/your-username/your-forked-repo.git
+cd your-forked-repo
+
+# Add upstream remote
+git remote add upstream https://github.com/original-owner/original-repo.git
+
+# Sync your fork with upstream
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+
+# Create a new branch
+git checkout -b new-feature-branch
+
+# Make changes, stage, and commit
+git add .
+git commit -m "Description of your changes"
+
+# Push to your fork
+git push -u origin new-feature-branch
+
+# Merge into your fork's main branch (optional)
+git checkout main
+git merge new-feature-branch
+git push origin main
+
+# Create a pull request on GitHub
+# (Follow the steps in the GitHub UI)
+
+# After PR is merged, sync your fork
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
